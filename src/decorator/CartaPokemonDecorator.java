@@ -21,11 +21,6 @@ public abstract class CartaPokemonDecorator implements CartaPokemon {
     }
 
     @Override
-    public int getAtaque() {
-        return carta.getAtaque();
-    }
-
-    @Override
     public String getDescricao() {
         return carta.getDescricao();
     }

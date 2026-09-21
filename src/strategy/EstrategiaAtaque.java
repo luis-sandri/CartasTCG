@@ -3,5 +3,9 @@ package strategy;
 import model.CartaPokemon;
 
 public interface EstrategiaAtaque {
-    public int calcularDano(CartaPokemon atacante, CartaPokemon defensor);
+
+    int calcularDano(
+            CartaPokemon atacante,
+            CartaPokemon defensor
+    );
 }

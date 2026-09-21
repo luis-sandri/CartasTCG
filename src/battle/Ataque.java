@@ -4,8 +4,9 @@ import model.CartaPokemon;
 import strategy.EstrategiaAtaque;
 
 public class Ataque {
-    String nome;
-    EstrategiaAtaque estrategia;
+
+    private String nome;
+    private EstrategiaAtaque estrategia;
 
     public Ataque(String nome, EstrategiaAtaque estrategia) {
         this.nome = nome;
@@ -14,6 +15,10 @@ public class Ataque {
 
     public int executar(CartaPokemon atacante, CartaPokemon defensor) {
         return estrategia.calcularDano(atacante, defensor);
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public void setEstrategia(EstrategiaAtaque estrategia) {
