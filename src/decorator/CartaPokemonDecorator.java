@@ -32,4 +32,9 @@ public abstract class CartaPokemonDecorator implements CartaPokemon {
     public List<Ataque> getAtaques() {
         return carta.getAtaques();
     }
+
+    @Override
+    public void receberDano(int dano) {
+        carta.receberDano(dano);
+    }
 }

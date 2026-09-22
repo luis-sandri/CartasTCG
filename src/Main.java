@@ -1,56 +1,28 @@
 import battle.Ataque;
 import model.CartaPokemon;
 import model.Pikachu;
-import strategy.DanoFixo;
-import strategy.DanoPorHP;
-import strategy.DanoPorMoeda;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        CartaPokemon pikachu = new Pikachu();
+        CartaPokemon atacante = new Pikachu();
         CartaPokemon defensor = new Pikachu();
 
-        Ataque ataqueFixo = new Ataque(
-                "Thunder Shock",
-                new DanoFixo(30)
-        );
+        Ataque thunderShock = atacante.getAtaques().get(0);
 
-        Ataque ataquePorHP = new Ataque(
-                "Ataque por HP",
-                new DanoPorHP()
-        );
+        System.out.println("HP antes: " + defensor.getHP());
 
-        Ataque ataquePorMoeda = new Ataque(
-                "Ataque por Moeda",
-                new DanoPorMoeda(40)
-        );
-
-        System.out.println("Pokémon atacante: " + pikachu.getNome());
-        System.out.println("HP: " + pikachu.getHP());
-
-        System.out.println();
+        int dano = thunderShock.executar(atacante, defensor);
 
         System.out.println(
-                ataqueFixo.getNome()
-                        + " causou "
-                        + ataqueFixo.executar(pikachu, defensor)
-                        + " de dano."
+                atacante.getNome()
+                        + " usou "
+                        + thunderShock.getNome()
         );
 
-        System.out.println(
-                ataquePorHP.getNome()
-                        + " causou "
-                        + ataquePorHP.executar(pikachu, defensor)
-                        + " de dano."
-        );
+        System.out.println("Dano causado: " + dano);
 
-        System.out.println(
-                ataquePorMoeda.getNome()
-                        + " causou "
-                        + ataquePorMoeda.executar(pikachu, defensor)
-                        + " de dano."
-        );
+        System.out.println("HP depois: " + defensor.getHP());
     }
 }

@@ -14,7 +14,12 @@ public class Ataque {
     }
 
     public int executar(CartaPokemon atacante, CartaPokemon defensor) {
-        return estrategia.calcularDano(atacante, defensor);
+
+        int dano = estrategia.calcularDano(atacante, defensor);
+
+        defensor.receberDano(dano);
+
+        return dano;
     }
 
     public String getNome() {
