@@ -1,6 +1,9 @@
 package decorator;
 
+import battle.Ataque;
 import model.CartaPokemon;
+
+import java.util.List;
 
 public abstract class CartaPokemonDecorator implements CartaPokemon {
 
@@ -23,5 +26,10 @@ public abstract class CartaPokemonDecorator implements CartaPokemon {
     @Override
     public String getDescricao() {
         return carta.getDescricao();
+    }
+
+    @Override
+    public List<Ataque> getAtaques() {
+        return carta.getAtaques();
     }
 }
