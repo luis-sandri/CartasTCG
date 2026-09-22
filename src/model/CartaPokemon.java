@@ -14,4 +14,6 @@ public interface CartaPokemon {
     List<Ataque> getAtaques();
 
     void receberDano(int dano);
+
+    void aplicarEfeitoTurno();
 }

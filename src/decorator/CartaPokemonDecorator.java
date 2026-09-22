@@ -37,4 +37,9 @@ public abstract class CartaPokemonDecorator implements CartaPokemon {
     public void receberDano(int dano) {
         carta.receberDano(dano);
     }
+
+    @Override
+    public void aplicarEfeitoTurno() {
+        carta.aplicarEfeitoTurno();
+    }
 }

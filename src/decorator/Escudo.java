@@ -4,21 +4,28 @@ import model.CartaPokemon;
 
 public class Escudo extends CartaPokemonDecorator {
 
-    private int bonusHP;
+    private int reducaoDano;
 
-    public Escudo(CartaPokemon carta, int bonusHP) {
+    public Escudo(CartaPokemon carta, int reducaoDano) {
         super(carta);
-        this.bonusHP = bonusHP;
+        this.reducaoDano = reducaoDano;
     }
 
     @Override
-    public int getHP() {
-        return carta.getHP() + bonusHP;
+    public void receberDano(int dano) {
+
+        int danoReduzido = dano - reducaoDano;
+
+        if (danoReduzido < 0) {
+            danoReduzido = 0;
+        }
+
+        carta.receberDano(danoReduzido);
     }
 
     @Override
     public String getDescricao() {
         return carta.getDescricao()
-                + " + Escudo Pokémon (+" + bonusHP + " HP)";
+                + " + Escudo (-" + reducaoDano + " de dano recebido)";
     }
 }

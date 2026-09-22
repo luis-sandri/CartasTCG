@@ -7,28 +7,29 @@ import strategy.DanoPorHP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pikachu implements CartaPokemon {
+public class Squirtle implements CartaPokemon {
 
     private String nome;
     private int hp;
     private List<Ataque> ataques;
 
-    public Pikachu() {
-        this.nome = "Pikachu";
+    public Squirtle() {
+        this.nome = "Squirtle";
         this.hp = 70;
         this.ataques = new ArrayList<>();
 
         ataques.add(
                 new Ataque(
-                        "Thunder Shock",
-                        new DanoFixo(30)
+                        "Tackle",
+                        new DanoFixo(20)
                 )
         );
 
         ataques.add(
                 new Ataque(
-                        "Electro Ball",
-                        new DanoPorHP())
+                        "Water Gun",
+                        new DanoPorHP()
+                )
         );
     }
 
@@ -44,7 +45,7 @@ public class Pikachu implements CartaPokemon {
 
     @Override
     public String getDescricao() {
-        return "Pikachu - Pokémon do tipo Elétrico";
+        return "Squirtle - Pokémon do tipo Água";
     }
 
     @Override
@@ -64,5 +65,4 @@ public class Pikachu implements CartaPokemon {
     @Override
     public void aplicarEfeitoTurno() {
     }
-
 }

@@ -2,33 +2,34 @@ package model;
 
 import battle.Ataque;
 import strategy.DanoFixo;
-import strategy.DanoPorHP;
+import strategy.DanoPorMoeda;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pikachu implements CartaPokemon {
+public class Charmander implements CartaPokemon {
 
     private String nome;
     private int hp;
     private List<Ataque> ataques;
 
-    public Pikachu() {
-        this.nome = "Pikachu";
-        this.hp = 70;
+    public Charmander() {
+        this.nome = "Charmander";
+        this.hp = 60;
         this.ataques = new ArrayList<>();
 
         ataques.add(
                 new Ataque(
-                        "Thunder Shock",
-                        new DanoFixo(30)
+                        "Scratch",
+                        new DanoFixo(20)
                 )
         );
 
         ataques.add(
                 new Ataque(
-                        "Electro Ball",
-                        new DanoPorHP())
+                        "Ember",
+                        new DanoPorMoeda(40)
+                )
         );
     }
 
@@ -44,7 +45,7 @@ public class Pikachu implements CartaPokemon {
 
     @Override
     public String getDescricao() {
-        return "Pikachu - Pokémon do tipo Elétrico";
+        return "Charmander - Pokémon do tipo Fogo";
     }
 
     @Override
@@ -64,5 +65,4 @@ public class Pikachu implements CartaPokemon {
     @Override
     public void aplicarEfeitoTurno() {
     }
-
 }
